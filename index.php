@@ -41,6 +41,13 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }*/
         }
+        elseif ($_GET['action'] == 'signalComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 ))
+                {
+                    
+                }
+        }
         elseif ($_GET['action'] == 'registration') {
             if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
             {

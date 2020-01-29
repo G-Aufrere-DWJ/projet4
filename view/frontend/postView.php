@@ -46,12 +46,14 @@
         ?>
             <p><strong><?= htmlspecialchars($comment['id_author']) ?></strong> le <?= $comment['creation_date'] ?></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-            
+
             <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] == 0 )) { ?>
                 <a href="index.php?action=deleteComment&id=<?= ($comment['id'])?>">Supprimer le commentaire</a>
             <?php } ?>
             
+            <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 )) { ?>
             <a href="index.php?action=signalComment&id=<?= ($comment['id'])?>">Signaler le commentaire</a>
+            <?php } ?>
         <?php
         }
         ?>
