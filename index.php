@@ -37,9 +37,9 @@ try {
                     throw new Exception('Vous n\'avez pas l\'autorisation requise');
                 }
             }
-            else {
+            /*else //{
                 throw new Exception('Aucun identifiant de billet envoyé');
-            }
+            }*/
         }
         elseif ($_GET['action'] == 'registration') {
             if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
