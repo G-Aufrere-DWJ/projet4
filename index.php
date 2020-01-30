@@ -31,7 +31,7 @@ try {
         elseif ($_GET['action'] == 'deleteComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_SESSION['id']) && ($_SESSION['role'] == 0 )) {
-                    removeComment($_GET['id']);
+                    removeComment($_GET['id'], $_GET['post_id']);
                 }
                 else {
                     throw new Exception('Vous n\'avez pas l\'autorisation requise');
@@ -45,9 +45,10 @@ try {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 ))
                 {
-                    
+                    reportComment($_GET['id']);
                 }
         }
+    }
         elseif ($_GET['action'] == 'registration') {
             if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
             {

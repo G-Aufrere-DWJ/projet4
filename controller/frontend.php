@@ -94,7 +94,7 @@ function disconnect()
     header('Location: index.php');
 }
 
-function removeComment($id)
+function removeComment($id, $post_id)
 {
     $commentManager = new Guillaume\projet4\model\CommentManager();
     $affectedLines = $commentManager->deleteComment($id);
@@ -107,4 +107,19 @@ function removeComment($id)
     else {
         header('Location: index.php?action=post&id=' . $post_id);
     }
+}
+
+function reportComment($id)
+{
+    $commentManager = new Guillaume\projet4\model\CommentManager();
+    $affectedLines = $commentManager->signalComment($id);
+
+    if ($affectedLines == false)
+    {
+        throw new Exception ('Impossible de signaler le commentaire');
+    }
+
+    /*else {
+        header('Location: index.php?action=post&id=' . $post_id);
+    }*/
 }

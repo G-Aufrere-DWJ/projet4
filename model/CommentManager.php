@@ -45,4 +45,13 @@ public function deleteComment($id)
     return $deleted;
 }
 
+public function signalComment($id)
+{
+    $db = $this->dbConnect();
+    $req = $db->prepare('UPDATE comments set signal_comments = 1 WHERE id = ?');
+    $signal = $req->execute(array($id));
+
+    return $signal;
+}
+
 }
