@@ -37,29 +37,33 @@ try {
                     throw new Exception('Vous n\'avez pas l\'autorisation requise');
                 }
             }
-            /*else //{
+            else {
                 throw new Exception('Aucun identifiant de billet envoyé');
-            }*/
+            }
         }
         elseif ($_GET['action'] == 'signalComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 ))
                 {
-                    reportComment($_GET['id']);
+                    reportComment($_GET['id'],  $_GET['post_id']);
                 }
+                else
+                {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
         }
-    }
         elseif ($_GET['action'] == 'registration') {
             if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
             {
                 addUser($_POST['pseudo'], $_POST['mdp']);
             }
-                else
-                {
-                    throw new Exception('Veuillez remplir les informations requises pour l\'inscription');
-                }
+            else
+            {
+                throw new Exception('Veuillez remplir les informations requises pour l\'inscription');
             }
-            elseif ($_GET['action'] == 'formInscription') {
+        }
+        elseif ($_GET['action'] == 'formInscription') {
                 afficheInscription();
             }
         elseif ($_GET['action'] == 'connect') {

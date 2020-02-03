@@ -52,7 +52,7 @@
             <?php } ?>
             
             <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 )) { ?>
-            <a href="index.php?action=signalComment&id=<?= ($comment['id'])?>">Signaler le commentaire</a>
+            <a href="index.php?action=signalComment&id=<?= ($comment['id'])?>&post_id=<?= $_GET['id']?>">Signaler le commentaire</a>
             <?php } ?>
         <?php
         }

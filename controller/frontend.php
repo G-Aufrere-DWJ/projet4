@@ -114,12 +114,12 @@ function reportComment($id)
     $commentManager = new Guillaume\projet4\model\CommentManager();
     $affectedLines = $commentManager->signalComment($id);
 
-    if ($affectedLines === false)
+    if ($affectedLines == false)
     {
         throw new Exception ('Impossible de signaler le commentaire');
     }
-
-    /*else {
+    
+    else {
         header('Location: index.php?action=post&id=' . $post_id);
-    }*/
+    }
 }
