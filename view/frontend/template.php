@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title><?= $title ?></title>
-        <link rel="stylesheet" href="public/style.css"/> 
-        <link rel="stylesheet" href="public/reset.css"/> 
+        <link rel="stylesheet" href="public/css/style.css"/> 
+        <link rel="stylesheet" href="public/css/reset.css"/> 
 
         <!-- Bootstrap core CSS -->
         <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,13 +29,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="view/frontend/listPostsView.php">Blog</a>
+            <a class="nav-link" href="index.php?action=listPosts">Blog</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.html">Biographie</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="post.html">Contact</a>
+            <a class="nav-link" href="index.php?action=biographie">Biographie</a>
         </li>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

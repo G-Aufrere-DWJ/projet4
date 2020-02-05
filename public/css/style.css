@@ -1,0 +1,19 @@
+#mainNav {
+    background-color: #124980 !important;
+    padding: 30px;
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+    background-color: #124980 !important;
+    border: none !important;
+}
+
+#mainNav .btn {
+    font-size: 16px;
+    padding: 10px 25px !important;
+}
+
+#mainNav .nav-link {
+    font-size: 16px !important;
+}

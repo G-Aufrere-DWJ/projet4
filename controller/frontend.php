@@ -123,3 +123,8 @@ function reportComment($id, $post_id)
         header('Location: index.php?action=post&id=' . $post_id);
     }
 }
+
+function afficheBiographie()
+{
+    require('view/frontend/bioView.php');
+}

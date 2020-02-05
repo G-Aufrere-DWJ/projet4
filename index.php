@@ -96,6 +96,9 @@ try {
                 throw new Exception('Vous n\'êtes pas connecté');
             }
         }
+        elseif ($_GET['action'] == 'biographie') {
+            afficheBiographie();
+        }
     }
     else { //si il il n'y a pas d'action
         listPosts();
