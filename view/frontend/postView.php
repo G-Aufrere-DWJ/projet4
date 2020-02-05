@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Mon blog</title>
+        <title>Billet simple pour l'alaska</title>
         <link href="style.css" rel="stylesheet" /> 
     </head>
         

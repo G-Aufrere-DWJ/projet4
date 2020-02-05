@@ -1,7 +1,7 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon blog</h1>
+<h1>Billet simple pour l'Alaska</h1>
 <p>Derniers billets du blog :</p>
 
 
