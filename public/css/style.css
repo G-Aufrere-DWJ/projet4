@@ -17,3 +17,7 @@
 #mainNav .nav-link {
     font-size: 16px !important;
 }
+
+#registration .bg-dark {
+    margin-top: 12% !important;
+}

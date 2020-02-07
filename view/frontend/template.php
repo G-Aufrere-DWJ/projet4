@@ -34,20 +34,26 @@
         <li class="nav-item">
             <a class="nav-link" href="index.php?action=biographie">Biographie</a>
         </li>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Espace membre
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <?php if (!isset($_SESSION['id'])) { ?>
-                <a class="dropdown-item" href="index.php?action=formInscription">Inscription</a>
-                <a class="dropdown-item" href="index.php?action=formConnection">Connexion</a>
-                <?php } 
+        <li class="nav-item">
+        <?php if (!isset($_SESSION['id'])) { ?>
+            <a class="nav-link" href="index.php?action=formInscription">Inscription</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="index.php?action=formConnection">Connexion</a>
+        </li>
+        <?php } 
                 else { ?>
-                <a class="dropdown-item" href="index.php?action=disconnect">Deconnexion</a>
+        <li class="nav-item">
+        <a class="nav-link" href="index.php?action=disconnect">Deconnexion</a>
+        </li>
+        <?php } ?>
+        <?php if (isset($_SESSION['role'])) {
+            if ($_SESSION['role'] == 0) { ?>
+                <li class="nav-item">
+                <a class="nav-link" href="index.php?action=admin">Admin</a>
+                </li>
                 <?php } ?>
-            </ul>
-        </div>
+        <?php } ?>
         </ul>
     </div>
     </div>

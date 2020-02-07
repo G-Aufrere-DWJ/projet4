@@ -99,6 +99,14 @@ try {
         elseif ($_GET['action'] == 'biographie') {
             afficheBiographie();
         }
+        elseif ($_GET['action'] == 'admin') {
+            if ($_SESSION['role'] == 0) {
+                afficheAdmin();
+            }
+            else {
+                throw new Exception('Vous n\'avez pas l\'autorisation requise');
+            }
+        }
     }
     else { //si il il n'y a pas d'action
         listPosts();
