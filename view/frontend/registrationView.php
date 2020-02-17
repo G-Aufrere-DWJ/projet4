@@ -1,69 +1,30 @@
 <?php ob_start(); ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset ="utf-8">
-        <title>Inscription</title>
-        <link href="public/css/style.css" rel="stylesheet" /> 
-    </head>
 
-<body>
-    <div id="registration" class="container bg-dark">
-        <div class="row">
-            <div class="px-sm-5 px-lg-0 col-lg-10 offset-lg-1 mb-5 mt-5">
-
-                <h2 class="text-center mt-5 mb-5 text-white">Inscription</h2>
-                <br /><br />
-
-                <form action="index.php?action=registration" method="post" id="registration_form">
-                    <div class="row">
-                        <div class="col">
-                        <input type="text" placeholder="votre pseudo" id="pseudo" name="pseudo" required="required" />
+        <section id="login-form">
+            <div class="container">
+                <div class="row">
+                    <div id="registration" class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 pb-5 px-5">
+                                <h2>Inscription</h2>
+                                <form action="index.php?action=registration" method="post" id="registration_form">
+                                    <div class="form-group">
+                                        <label for="pseudo">Votre pseudo</label>
+                                        <input type="text" class="form-control" placeholder="veuillez entrer votre pseudo" id="pseudo" name="pseudo" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="mdp">Votre mot de passe</label>
+                                        <input type="password" class="form-control" placeholder="veuillez entrer votre mot de passe" id="mdp" name="mdp" required="required" />
+                                    </div>
+                                        <button type="submit" name="formInscription" class="btn btn-primary">Je m'inscris</button>
+                                </form>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                        <input type="password" placeholder="votre mot de passe" id="mdp" name="mdp" required="required" />
-                    </div>
-                    <div class="col">
-                        <button type="submit" name="formInscription" class="btn btn-primary mb-2">Je m'inscris</button>
-                    </div>
-                </form>
-
-               <!-- <table>
-                    <tr>
-                        <td>
-                            <label for="pseudo">Pseudo :</label>
-                        </td>
-
-                        <td>
-                            <input type="text" placeholder="votre pseudo" id="pseudo" name="pseudo" required="required" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="mdp">Mot de passe :</label>
-                        </td>
-
-                        <td>
-                            <input type="password" placeholder="votre mot de passe" id="mdp" name="mdp" required="required" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                        <br />
-                            <input type="submit" name="formInscription" value="Je m'inscris"/>
-                        </td>
-                    </tr>
-                </table>
-
-                </form>-->
+                </div>
             </div>
-        </div>
-    </div>
-</body>
-</html>
+        </section>
+
+
 <?php $content = ob_get_clean(); ?>
+
+<?php $title = 'Inscription' ?>
 
 <?php require('view/frontend/template.php'); ?>

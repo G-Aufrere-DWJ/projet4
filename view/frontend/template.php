@@ -3,9 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title><?= $title ?></title>
-        <link rel="stylesheet" href="public/css/style.css"/> 
-        <link rel="stylesheet" href="public/css/reset.css"/> 
-
+    
         <!-- Bootstrap core CSS -->
         <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,6 +14,8 @@
 
         <!-- Custom styles for this template -->
         <link href="public/css/clean-blog.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="public/css/style.css"/> 
     </head>
         
     <body>
