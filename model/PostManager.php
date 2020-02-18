@@ -29,4 +29,13 @@ public function getPost($id)
         header('Location: index.php');
 }
 
+public function deletePost($id) 
+{
+    $db = $this->dbConnect();
+    $req = $db->prepare('DELETE FROM posts WHERE id = ?');
+    $deleted = $req->execute(array($id));
+
+    return $deleted;
+}
+
 }

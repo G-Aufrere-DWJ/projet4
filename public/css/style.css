@@ -1,40 +1,61 @@
 #mainNav {
-    background-color: #124980 !important;
-    padding: 30px;
+  background-color: #124980 !important;
+  padding: 30px;
 }
 
 .btn-secondary,
 .btn-secondary:hover {
-    background-color: #124980 !important;
-    border: none !important;
+  background-color: #124980 !important;
+  border: none !important;
 }
 
 #mainNav .btn {
-    font-size: 16px;
-    padding: 10px 25px !important;
+  font-size: 16px;
+  padding: 10px 25px !important;
 }
 
 #mainNav .nav-link {
-    font-size: 16px !important;
+  font-size: 16px !important;
 }
 
 #login-form .btn-primary {
-    background-color: #5393C6;
-    border-radius: 5px;
-    margin-left: 29%;
+  background-color: #5393c6;
+  border-radius: 5px;
+  margin-left: 29%;
 }
 
 #login-form {
-    margin-top: 12%;
+  margin-top: 12%;
 }
 
 #registration_form {
-    border: 1px dashed;
-    border-radius: 5px;
-    padding: 16px;
+  border: 1px dashed;
+  border-radius: 5px;
+  padding: 16px;
 }
 
 #registration h2 {
-    text-align: center;
-    margin-bottom: 5%;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+#connect-form .btn-primary {
+  background-color: #5393c6;
+  border-radius: 5px;
+  margin-left: 29%;
+}
+
+#connect-form {
+  margin-top: 12%;
+}
+
+#connect_form {
+  border: 1px dashed;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+#connect h2 {
+  text-align: center;
+  margin-bottom: 5%;
 }

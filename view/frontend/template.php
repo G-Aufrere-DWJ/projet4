@@ -3,6 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title><?= $title ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tiny.cloud/1/p4xaubzszlb7dcui82iad2a4gfyb5ksvykd3kqvgs6ot6ryo/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+        tinymce.init({
+            language : "fr_FR",
+            selector: '#content'
+        });
+        </script>
+        
     
         <!-- Bootstrap core CSS -->
         <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
