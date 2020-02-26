@@ -133,3 +133,11 @@ function afficheAdmin()
 {
     require('view/frontend/adminView.php');
 }
+
+function afficheCommentaires()
+{
+    $commentManager = new Guillaume\projet4\model\CommentManager();
+    $comments = $commentManager->getSignalComments();
+    
+    require('view/frontend/listSignalCommentsView.php');
+}

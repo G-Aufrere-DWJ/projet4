@@ -59,3 +59,15 @@
   text-align: center;
   margin-bottom: 5%;
 }
+
+#tiny_form {
+  margin-top: 10%;
+}
+
+#signal_comments {
+  margin-top: 10%;
+}
+
+#error_message {
+  margin-top: 10%;
+}

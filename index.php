@@ -100,11 +100,27 @@ try {
             afficheBiographie();
         }
         elseif ($_GET['action'] == 'admin') {
+            if(isset($_SESSION['role'])){
             if ($_SESSION['role'] == 0) {
                 afficheAdmin();
             }
             else {
                 throw new Exception('Vous n\'avez pas l\'autorisation requise');
+            }
+        }
+        else {
+            throw new Exception('Vous n\'avez pas l\'autorisation requise');
+        }
+            
+        }
+        elseif ($_GET['action'] == 'listSignalComments') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    afficheCommentaires();
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
             }
         }
     }
@@ -113,6 +129,7 @@ try {
     }
     } // fin du try
 catch(Exception $e) { // S'il y a eu une erreur, alors...
-    echo 'Erreur : ' . $e->getMessage();
+    $errorMessage = $e->getMessage();
+    require('view/frontend/errorView.php');
 }
 

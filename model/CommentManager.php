@@ -54,4 +54,11 @@ public function signalComment($id)
     return $signal;
 }
 
+public function getSignalComments()
+{
+    $db = $this->dbConnect();
+    $req = $db->query('SELECT * FROM comments WHERE signal_comments = 1');
+    return $req;
+}
+
 }
