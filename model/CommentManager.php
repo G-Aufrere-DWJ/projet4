@@ -61,4 +61,13 @@ public function getSignalComments()
     return $req;
 }
 
+public function ignoreComment($id)
+{
+    $db = $this->dbConnect();
+    $req = $db->prepare('UPDATE comments set signal_comments = 0 WHERE id = ?');
+    $offSignal = $req->execute(array($id));
+
+    return $offSignal;
+}
+
 }

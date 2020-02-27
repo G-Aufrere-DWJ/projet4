@@ -141,3 +141,15 @@ function afficheCommentaires()
     
     require('view/frontend/listSignalCommentsView.php');
 }
+
+function pullOutComment($id, $post_id)
+{
+    $commentManager = new Guillaume\projet4\model\CommentManager();
+    $affectedLines = $commentManager->ignoreComment($id);
+
+    if ($affectedLines == false)
+    {
+        throw new Exception ('Impossible de retirer le signalement');
+    }
+    
+}

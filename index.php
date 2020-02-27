@@ -122,6 +122,19 @@ try {
                     throw new Exception('Vous n\'avez pas l\'autorisation requise');
                 }
             }
+            else {
+                throw new Exception('Vous n\'avez pas l\'autorisation requise');
+            }
+        }
+        elseif ($_GET['action'] == 'takeOffComment') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    pullOutComment($_GET['id'], $_GET['post_id']);
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
         }
     }
     else { //si il il n'y a pas d'action
