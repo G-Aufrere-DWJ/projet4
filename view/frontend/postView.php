@@ -44,7 +44,7 @@
         while ($comment = $comments->fetch())
         {
         ?>
-            <p><strong><?= htmlspecialchars($comment['id_author']) ?></strong> le <?= $comment['creation_date'] ?></p>
+            <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['creation_date'] ?></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
             <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] == 0 )) { ?>

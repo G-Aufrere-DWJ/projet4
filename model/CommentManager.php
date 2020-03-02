@@ -20,7 +20,7 @@ public function getComments($post_id)
 {
     $db = $this->dbConnect();
 
-    $comments = $db->prepare('SELECT id, id_author, comment, creation_date FROM comments WHERE post_id = ? ORDER BY creation_date DESC');
+    $comments = $db->prepare('SELECT user.pseudo, comments.id, comments.id_author, comments.comment, comments.creation_date FROM comments INNER JOIN user ON comments.id_author = user.id WHERE post_id = ? ORDER BY creation_date DESC');
     $comments->execute(array($post_id));
 
     return $comments;
@@ -57,7 +57,7 @@ public function signalComment($id)
 public function getSignalComments()
 {
     $db = $this->dbConnect();
-    $req = $db->query('SELECT * FROM comments WHERE signal_comments = 1');
+    $req = $db->query('SELECT user.pseudo, comments.comment, comments.id, comments.creation_date, comments.post_id FROM comments INNER JOIN user ON comments.id_author = user.id WHERE comments.signal_comments = 1');
     return $req;
 }
 
