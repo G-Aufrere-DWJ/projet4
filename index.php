@@ -136,6 +136,26 @@ try {
                 }
             }
         }
+        elseif ($_GET['action'] == 'gestionArticles') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    adminPosts();
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
+        }
+        elseif ($_GET['action'] == 'deletePost') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    removePost($_GET['id']);
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
+        }
     }
     else { //si il il n'y a pas d'action
         listPosts();

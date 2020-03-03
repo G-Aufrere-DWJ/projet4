@@ -25,7 +25,8 @@
 
         <h2>Commentaires</h2>
 
-        <?php if (isset($_SESSION['id'])) { ?>
+        <?php if (isset($_SESSION['id'])) {
+            if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 )) { ?>
             <form action="index.php?action=addComment&id=<?= $post->id ?>" method="post">
                 
                 <div>
@@ -37,6 +38,7 @@
                 </div>
             </form> 
             <?php } ?>
+            <?php } ?>
         
         
 
@@ -46,10 +48,6 @@
         ?>
             <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['creation_date'] ?></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-
-            <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] == 0 )) { ?>
-                <a href="index.php?action=deleteComment&id=<?= ($comment['id'])?>&post_id=<?= $_GET['id']?>">Supprimer le commentaire</a>
-            <?php } ?>
             
             <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 )) { ?>
             <a href="index.php?action=signalComment&id=<?= ($comment['id'])?>&post_id=<?= $_GET['id']?>">Signaler le commentaire</a>

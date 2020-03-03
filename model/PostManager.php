@@ -38,4 +38,13 @@ public function deletePost($id)
     return $deleted;
 }
 
+public function modifyPost($id)
+{
+    $db = $this->dbConnect();
+    $req = $db->prepare('UPDATE posts SET title = ?, post = ? WHERE id= ?');
+    $modifiedPost = $req->execute(array($id));
+
+    return $modifiedPost;
+}
+
 }

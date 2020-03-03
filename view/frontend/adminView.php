@@ -4,7 +4,7 @@
         <textarea id="content">Hello, World!</textarea>
     </form>
 
-    <form action="index.php?action=listPosts" method="post" id="admin_posts_form">
+    <form action="index.php?action=gestionArticles" method="post" id="admin_posts_form">
         <button class="btn btn-primary" id="show_posts_admin">Gérer les articles</button>
     </form>
 

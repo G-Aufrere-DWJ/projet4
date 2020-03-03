@@ -153,3 +153,33 @@ function pullOutComment($id, $post_id)
     }
     
 }
+
+function updatePost($id)
+{
+    $postManager = new Guillaume\projet4\model\PostManager();
+    $affectedLines = $postManager->modifyPost($id);
+
+    if ($affectedLines == false)
+    {
+        throw new Exception ('Impossible de modifier le contenu');
+    }
+}
+
+function adminPosts()
+{
+    $postManager = new Guillaume\projet4\model\PostManager();
+    $posts = $postManager->getPosts();
+
+    require('view/frontend/gestionPostsView.php');
+}
+
+function removePost($id)
+{
+    $postManager = new Guillaume\projet4\model\PostManager();
+    $affectedLines = $postManager->deletePost($id);
+
+    if ($affectedLines == false)
+    {
+        throw new Exception ('Impossible de supprimer cet article');
+    }
+}
