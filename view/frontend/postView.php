@@ -19,7 +19,7 @@
             </h3>
             
             <p>
-                <?= nl2br(htmlspecialchars($post->post)) ?>
+                <?= ($post->post) ?>
             </p>
         </div>
 

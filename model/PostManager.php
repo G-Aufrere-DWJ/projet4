@@ -38,13 +38,22 @@ public function deletePost($id)
     return $deleted;
 }
 
-public function modifyPost($id)
+public function modifyPost($id, $title, $post)
 {
     $db = $this->dbConnect();
-    $req = $db->prepare('UPDATE posts SET title = ?, post = ? WHERE id= ?');
-    $modifiedPost = $req->execute(array($id));
+    $req = $db->prepare('UPDATE posts SET title = ?, post = ? WHERE id = ?');
+    $modifiedPost = $req->execute(array($title, $post, $id));
 
     return $modifiedPost;
+}
+
+public function addPost($title, $post)
+{
+    $db = $this->dbConnect();
+    $req = $db->prepare('INSERT INTO posts (title, post, creation_date) VALUES (?, ?, NOW())');
+    $affectedLines = $req->execute(array($title, $post));
+    
+    return $affectedLines;
 }
 
 }

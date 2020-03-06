@@ -154,14 +154,18 @@ function pullOutComment($id, $post_id)
     
 }
 
-function updatePost($id)
+function updatePost($id, $title, $post)
 {
     $postManager = new Guillaume\projet4\model\PostManager();
-    $affectedLines = $postManager->modifyPost($id);
+    $affectedLines = $postManager->modifyPost($id, $title, $post);
+    
 
     if ($affectedLines == false)
     {
         throw new Exception ('Impossible de modifier le contenu');
+    }
+    else {
+        header('Location: index.php?action=post&id=' . $id);
     }
 }
 
@@ -182,4 +186,19 @@ function removePost($id)
     {
         throw new Exception ('Impossible de supprimer cet article');
     }
+}
+
+function newPost($title, $post)
+{
+    $postManager = new Guillaume\projet4\model\PostManager();
+    $affectedLines = $postManager->addPost($title, $post);
+
+    if ($affectedLines == false) {
+        throw new Exception('Impossible d\'ajouter l\'article !');
+    }
+}
+
+function writeArticle()
+{
+    require('view/frontend/newPostView.php');
 }

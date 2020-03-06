@@ -8,7 +8,7 @@
         <script>
         tinymce.init({
             language : "fr_FR",
-            selector: '#content'
+            selector: '#post'
         });
         </script>
         

@@ -156,6 +156,36 @@ try {
                 }
             }
         }
+        elseif ($_GET['action'] == 'modifyPost') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    updatePost($_GET['id'], $_POST['title'], $_POST['post']);
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
+        }
+        elseif ($_GET['action'] == 'ajoutePost') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    newPost($_POST['title'], $_POST['post']);
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
+        }
+        elseif ($_GET['action'] == 'writeArticle') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    writeArticle();
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
+        }
     }
     else { //si il il n'y a pas d'action
         listPosts();
