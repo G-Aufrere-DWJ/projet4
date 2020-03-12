@@ -20,13 +20,9 @@ public function getPost($id)
     $db = $this->dbConnect();
     $req = $db->prepare('SELECT * FROM posts WHERE id = ?');
     $req->execute(array($id));
-    if($req->rowCount() == 1)
-    {
-        $post = $req->fetch(\PDO::FETCH_OBJ);
-        return $post;
-    }
-    else 
-        header('Location: index.php');
+    $post = $req->fetch(\PDO::FETCH_OBJ);
+    
+    return $post;
 }
 
 public function deletePost($id) 

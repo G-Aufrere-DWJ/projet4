@@ -186,6 +186,9 @@ function removePost($id)
     {
         throw new Exception ('Impossible de supprimer cet article');
     }
+    else {
+        header('Location: index.php?action=post&id=' . $id);
+    }
 }
 
 function newPost($title, $post)
@@ -195,6 +198,9 @@ function newPost($title, $post)
 
     if ($affectedLines == false) {
         throw new Exception('Impossible d\'ajouter l\'article !');
+    }
+    else {
+        header('Location: index.php?action=post&id=' . $id);
     }
 }
 
