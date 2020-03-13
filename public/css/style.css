@@ -1,6 +1,11 @@
+body {
+  background-attachment: fixed;
+}
+
 #mainNav {
-  background-color: #124980 !important;
+  background-color: #192731 !important;
   padding: 30px;
+  position: fixed;
 }
 
 .btn-secondary,
@@ -78,4 +83,25 @@
 
 #gestion_all {
   margin-top: 10%;
+}
+
+#posts_header {
+  padding: 150px 0 50px 0;
+  text-align: center;
+  color: white;
+}
+
+#news {
+  color: black;
+  padding: 15px;
+  opacity: 0.8;
+  margin: auto;
+}
+
+#news p {
+  line-height: 2;
+}
+
+#news h3 {
+  text-align: center;
 }

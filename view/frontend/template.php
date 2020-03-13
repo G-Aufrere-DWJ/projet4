@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="public/css/style.css"/> 
     </head>
         
-    <body>
+    <body style="background-image: url('public/img/aurore.jpg');">
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top" id="mainNav">
     <div class="container">
     <a class="navbar-brand" href="index.php?action=home">Jean Forteroche</a>
@@ -39,9 +39,6 @@
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <a class="nav-link" href="index.php?action=listPosts">Blog</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="index.php?action=biographie">Biographie</a>
         </li>
         <li class="nav-item">
         <?php if (!isset($_SESSION['id'])) { ?>

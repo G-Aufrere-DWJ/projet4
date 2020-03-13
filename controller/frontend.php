@@ -124,11 +124,6 @@ function reportComment($id, $post_id)
     }
 }
 
-function afficheBiographie()
-{
-    require('view/frontend/bioView.php');
-}
-
 function afficheAdmin()
 {
     require('view/frontend/adminView.php');

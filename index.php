@@ -96,9 +96,6 @@ try {
                 throw new Exception('Vous n\'êtes pas connecté');
             }
         }
-        elseif ($_GET['action'] == 'biographie') {
-            afficheBiographie();
-        }
         elseif ($_GET['action'] == 'admin') {
             if(isset($_SESSION['role'])){
             if ($_SESSION['role'] == 0) {
