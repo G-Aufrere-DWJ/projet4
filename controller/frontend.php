@@ -8,7 +8,7 @@ function listPosts()
 {
     $postManager = new Guillaume\projet4\model\PostManager();
     $posts = $postManager->getPosts();
-
+    
     require('view/frontend/listPostsView.php');
 }
 
@@ -182,7 +182,7 @@ function removePost($id)
         throw new Exception ('Impossible de supprimer cet article');
     }
     else {
-        header('Location: index.php?action=post&id=' . $id);
+        header('Location: index.php?action=admin');
     }
 }
 
@@ -195,7 +195,7 @@ function newPost($title, $post)
         throw new Exception('Impossible d\'ajouter l\'article !');
     }
     else {
-        header('Location: index.php?action=post&id=' . $id);
+        header('Location: index.php?action=admin');
     }
 }
 

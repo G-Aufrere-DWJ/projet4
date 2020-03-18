@@ -7,24 +7,29 @@
     <p>Les derniers chapitres</p>
 </header>
 
+
 <?php
 while ($data = $posts->fetch())
+
 {
+    $texte = substr($data['post'], 0, 200).'...';
 ?>
-<div id="articles_blog" class="container bg-white">
+<div id="articles_blog" class="container bg-white col-7">
     <div class="row">
-        <div id="news" class="col-lg-8">
+        <div id="news" class="col-lg-11">
             <h3>
                 <?= $data['title'] ?>
                 <em>publié le <?= $data['creation_date'] ?></em>
             </h3>
             
             <p>
-                <?= $data['post'] ?>
-                <? echo substr($data['post'], 0, 50).'...'; ?>
+                <?= $texte ?>
             </p>
                 <br />
-                <a href="index.php?action=post&id=<?= $data['id'] ?>" class="btn btn-primary" role="button">Lire la suite</a>
+                <div class="text-center col-12">
+                    <a href="index.php?action=post&id=<?= $data['id'] ?>" class="btn btn-primary mb-5" role="button">Lire la suite</a>
+                </div>
+                <hr class="limite_post">
         </div>
     </div>
 </div>
