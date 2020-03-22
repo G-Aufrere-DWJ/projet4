@@ -1,5 +1,11 @@
 body {
   background-attachment: fixed;
+  margin-bottom: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 #mainNav {
@@ -113,29 +119,25 @@ body {
   margin: auto;
 }
 
-#whole_chapter h3 {
-  text-align: center;
-
-}
-
 #article_seul {
   border-radius: 5px;
+  margin-top: 4%;
 }
 
-#comments {
-  margin-top: 5%;
+#article_seul h3 {
+  text-align: center;
+  font-size: 1.8em;
+  color: white;
+  margin-bottom: 4%;
 }
 
-#comments h2 {
+#posts_comments h2 {
   font-size: 2.0em;
   font-weight: lighter;
 }
 
-#display_comment {
-  background-color: #fbf7ed;
-}
 
-#form_comment label {
+#form_comments label {
   text-align: center;
   font-size: 1.5em;
   font-weight: lighter;
@@ -197,4 +199,47 @@ hr.limite_admin:before {
   border-color: white;
   border-width: 0 0 1px 0;
   border-radius: 20px;
+}
+
+#ajout_post {
+  margin-top: 12%;
+}
+
+#display_comments {
+  margin: auto;
+}
+
+#signal_comments {
+  margin: auto;
+}
+
+#comments_moderation {
+  margin-top: 10%;
+}
+
+#comments_moderation h2 {
+  margin-bottom: 8%;
+}
+
+#form_comments {
+  margin: auto;
+}
+
+.btn {
+  font-size: 12px;
+  border-radius: 11px;
+  padding: 11px 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #192731;
+  color: #FFFFFF;
+}
+
+footer p {
+  text-align: center;
 }

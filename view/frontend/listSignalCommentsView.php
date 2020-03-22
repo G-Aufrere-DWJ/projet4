@@ -4,16 +4,22 @@
         while ($comment = $comments->fetch())
         {
         ?>
-        <div id="signal_comments">
-            <p>Commentaires à modérer</p>
-            <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['creation_date'] ?></p>
-            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+        <div id="comments_moderation">
+            <div class="container col-12">
+                <h2 class="text-white text-center">COMMENTAIRES A MODERER</h2>
+                    <div class="row">
+                        <div id="signal_comments">
+                            <p class="text-white"><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['creation_date'] ?></p>
+                            <p class="text-white"><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
-            <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] == 0 )) { ?>
-                <a href="index.php?action=deleteComment&id=<?= ($comment['id'])?>&post_id=<?= $comment['post_id']?>">Supprimer le commentaire</a>
-            <?php } ?>
-            <a href="index.php?action=takeOffComment&id=<?= ($comment['id'])?>&post_id=<?= $comment['post_id']?>">Retirer le signalement</a>
-        <?php } ?>
+                            <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] == 0 )) { ?>
+                                <a href="index.php?action=deleteComment&id=<?= ($comment['id'])?>&post_id=<?= $comment['post_id']?>" class="btn btn-danger">Supprimer le commentaire</a>
+                            <?php } ?>
+                            <a href="index.php?action=takeOffComment&id=<?= ($comment['id'])?>&post_id=<?= $comment['post_id']?>" class="btn btn-success">Retirer le signalement</a>
+                        <?php } ?>
+                        </div>
+                </div>
+            </div>
         </div>
         
             

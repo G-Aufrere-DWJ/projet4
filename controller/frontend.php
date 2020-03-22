@@ -105,7 +105,7 @@ function removeComment($id, $post_id)
     }
 
     else {
-        header('Location: index.php?action=post&id=' . $post_id);
+        header('Location: index.php?action=admin');
     }
 }
 
@@ -146,6 +146,9 @@ function pullOutComment($id, $post_id)
     {
         throw new Exception ('Impossible de retirer le signalement');
     }
+    else {
+        header('Location: index.php?action=listSignalComments');
+    }
     
 }
 
@@ -160,7 +163,7 @@ function updatePost($id, $title, $post)
         throw new Exception ('Impossible de modifier le contenu');
     }
     else {
-        header('Location: index.php?action=post&id=' . $id);
+        header('Location: index.php?action=admin');
     }
 }
 
@@ -202,4 +205,12 @@ function newPost($title, $post)
 function writeArticle()
 {
     require('view/frontend/newPostView.php');
+}
+
+function displayModifyPost()
+{
+    $postManager = new Guillaume\projet4\model\PostManager();
+    $post = $postManager->getPost($_GET['id']);
+
+    require('view/frontend/gestionOnePostView.php');
 }

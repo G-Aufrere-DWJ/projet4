@@ -183,6 +183,16 @@ try {
                 }
             }
         }
+        elseif ($_GET['action'] == 'displayGestionArticle') {
+            if(isset($_SESSION['role'])){
+                if ($_SESSION['role'] == 0) {
+                    displayModifyPost();
+                }
+                else {
+                    throw new Exception('Vous n\'avez pas l\'autorisation requise');
+                }
+            }
+        }
     }
     else { //si il il n'y a pas d'action
         listPosts();
