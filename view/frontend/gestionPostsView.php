@@ -1,14 +1,14 @@
 <?php ob_start(); ?>
 
 <?php
-while ($data = $posts->fetch())
+    while ($data = $posts->fetch())
 {
 ?>
 
-<div class="container">
+<div id="container_articles" class="container col-4">
     <div class="row">
-        <div class="gestion_article_seul">
-            <div id="titre_article_seul" class="text-white text-center">
+        
+            <div id="titre_article_seul" class="col text-white text-center">
                 <?= ($data['title']) ?>
             </div>
             <form action="index.php?action=displayGestionArticle&id=<?= ($data['id'])?>" method="post" class="col text-center">
@@ -17,7 +17,6 @@ while ($data = $posts->fetch())
             <div id="btn_suppress_post">
                 <a href="index.php?action=deletePost&id=<?= ($data['id'])?>" class="btn btn-danger">Supprimer l'article</a>
             </div>
-        </div>
     </div>
 </div>
 

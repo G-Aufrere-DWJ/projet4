@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="public/css/style.css"/> 
     </head>
         
-    <body style="background-image: url('public/img/aurore.jpg');">
+    <body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%), url('public/img/aurore.jpg');">
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top" id="mainNav">
     <div class="container">
     <a class="navbar-brand" href="index.php?action=home">Jean Forteroche</a>
@@ -67,13 +67,9 @@
 
         <?= $content ?>
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p>© 2020 Copyright: Guillaume Aufrere. Tous droits réservés</p>
-                    </div>
-                </div>
+        <footer class="page-footer font-small blue">
+            <div id="paragraphe_footer" class="footer-copyright text-white text-center">
+                © 2020 Copyright: Guillaume Aufrere. Tous droit réservés.
             </div>
         </footer>
 
