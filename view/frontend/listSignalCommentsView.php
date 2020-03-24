@@ -3,7 +3,7 @@
 
         <div id="comments_moderation">
             <h2 class="text-white text-center">COMMENTAIRES A MODERER</h2>
-                <div class="container bg-white col-12">
+                <div class="container bg-white col-12 pb-5">
                     <div class="row">
                         <div id="signal_comments" class="col-6">
                         <?php

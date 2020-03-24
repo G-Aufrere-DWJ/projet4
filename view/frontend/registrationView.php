@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 
-
         <section id="login-form">
             <div class="container">
                 <div class="row">

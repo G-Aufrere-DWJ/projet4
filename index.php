@@ -7,6 +7,9 @@ try {
         if ($_GET['action'] == 'listPosts') {
             listPosts();
         }
+        elseif ($_GET['action'] == 'home') {
+            afficheHome();
+        }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 post();
@@ -195,7 +198,7 @@ try {
         }
     }
     else { //si il il n'y a pas d'action
-        listPosts();
+        afficheHome();
     }
     } // fin du try
 catch(Exception $e) { // S'il y a eu une erreur, alors...

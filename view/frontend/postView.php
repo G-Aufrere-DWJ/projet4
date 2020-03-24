@@ -1,8 +1,5 @@
 <?php ob_start(); ?>
 
-    
-        
-
         <div id="article_seul">
             <h3>
                 <?php echo $post->title; ?>
@@ -33,7 +30,7 @@
                             <p id="content_comment"><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
                             <?php if (!empty($_SESSION['id']) && ($_SESSION['role'] > 0 )) { ?>
-                                <a href="index.php?action=signalComment&id=<?= ($comment['id'])?>&post_id=<?= $_GET['id']?>" id="red_btn_comments" class="btn btn-danger offset-8" role="button">Signaler le commentaire</a>
+                                <a href="index.php?action=signalComment&id=<?= ($comment['id'])?>&post_id=<?= $_GET['id']?>" id="red_btn_comments" class="btn btn-danger offset-lg-8" role="button">Signaler le commentaire</a>
                             <?php } ?>
                             <?php
                             }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title><?= $title ?></title>
@@ -38,6 +38,9 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
+            <a class="nav-link" href="index.php?action=home">Accueil</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="index.php?action=listPosts">Blog</a>
         </li>
         <li class="nav-item">
@@ -66,7 +69,7 @@
 </nav>
 
         <?= $content ?>
-
+                
         <footer class="page-footer font-small blue">
             <div id="paragraphe_footer" class="footer-copyright text-white text-center">
                 © 2020 Copyright: Guillaume Aufrere. Tous droit réservés.

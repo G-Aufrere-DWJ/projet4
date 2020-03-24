@@ -214,3 +214,8 @@ function displayModifyPost()
 
     require('view/frontend/gestionOnePostView.php');
 }
+
+function afficheHome()
+{
+    require('view/frontend/homeView.php');
+}

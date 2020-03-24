@@ -14,7 +14,7 @@ while ($data = $posts->fetch())
 {
     $texte = substr($data['post'], 0, 200).'...';
 ?>
-<div id="articles_blog" class="container bg-white col-7">
+<div id="articles_blog" class="container bg-white col-lg-7">
     <div class="row">
         <div id="news" class="col-lg-11">
             <h3>
